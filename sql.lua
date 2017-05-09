@@ -141,7 +141,7 @@ function sql( sql )
 	if res['action'] == 'select' then
 		
 		if value == nil then
-			return dataspace:len()
+			return dataspace:select()
 		elseif it ~= nil then
 
 			if get_type(dataspace, res['where']) == 'unsigned' then value = tonumber(value)  end
@@ -158,7 +158,7 @@ function sql( sql )
 	elseif res['action'] == 'count' then
 
 		if it == nil then
-			return dataspace:count()
+			return dataspace:len()
 		else
 			if res['value'] == nil then error('parse sql error: value is null') end
 
