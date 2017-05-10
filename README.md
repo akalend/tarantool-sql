@@ -41,7 +41,9 @@ The sql wrapper on the NoSQL datastore tarantool (www.tarantool.org)
     sql ('select * from test where id > 5')
     - 3
     
-    delete from test where id =1        --- delete only primary key
+    sql ('select * from test')          --- show all records
+    
+    delete from test where id =1        --- delete only by primary key
     
     
     
